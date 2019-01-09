@@ -7,11 +7,6 @@ int main(int argc, char const *argv[]) {
   /* code */
   int i;
   char cmd[100];
-  // if(argc >= 2){
-  //   printf("The arguments supplied are : \n");
-  //   for(int = i; i<argc; i++)
-  //     printf("%s\t", argc[i]);
-  // }
   while(1){
     scanf(" %[^\n]%*c",cmd);
     // if(argc == 1){
