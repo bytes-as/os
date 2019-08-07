@@ -1,0 +1,16 @@
+OPERATING SYSTEM    ----    ARUN SINGH (16CS10008)
+Shell with I/O redirection and pipes
+
+Introduction
+Idea was to first take input of the command from the STDIN from the terminal. Then while parsing the command that the user has input from the keyboard, we gonna breakdown the command within smaller subcommands separated by pipes. Those smaller sub-commands might need some redirection or might not but if there are any pipes present in the command by which we are getting the sub-commands have to write the data to the pipe rather than to the STDOUT. So the parsing has been done on the individual sub-commands in the loop writing into the pipe and reading from the pipe. As far as the sub command goes the redirection has been done just before there execution if needed.
+
+Code-WalkThrough
+takeInput() : takes the input into the character array and sends it for the further processing.
+While the takeInput() is taking input all the time after completion of every command untill the keyword ‘exit’ has been entered from the STDIN by the user. The character array passed as an argument to the stringParser() function().
+stringParser() : It starts parsing the string/command entered by the user, first by splitting the command into the sub-commands by the delimiter pipe ‘|’. Which has been done by the function pipeParsed() which just strip the command into the sub-commands for further processign.
+pipeParsed() : Splits up the string by the provided delimiters.
+Then the each sub-command is parsed in loop and gone through individual execution with the redirected STDIN and STDOUT by a common pipe created just to pass the data from one sub-command output to the second sub-command input.
+In each loop the subcommand is further tokenised with the help of function string ParserUtility() which will then executed by the function excvArgs() : which is just a sanitised version of execvp().
+stringParserUtility()  :  tokenize the command and sends them to call the exact family function to execution.
+split() : function used to get the sub-command component to the get the input’s source and output destination of the command execution.
+Other function used in the shell designing are wordParsed() , pipeFound(), lbFound(), rbFound(), ambFound() which aren’t necessary to be created separately but just for the purpose of easy readability of the code.

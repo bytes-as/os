@@ -163,7 +163,7 @@ int main()
     close(CE[0]);
     arrE = merge(arrAB, arrC, 100, 50);
     printArray(arrE, 150);
-    printf("process completed\n");
+    printf("All process completed\n");
   }
   return 0;
 }

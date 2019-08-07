@@ -1,0 +1,19 @@
+Each method, NON-PRE_EMPTIVE First Come First Serve, NON_PRE_EMPTIVE Shortest Job First, PRE_EMPTIVE Shortest Job First, Round Robin, Highest Response Ratio First, all these five methods have been ran 30 times, 10 each for the number of process 10, 50 and 100. There average turnaround time have been recorded  which was calculated by taking average of the turnaround time for all the process in one go and then taking their average.
+To generate the data like InterArrival Time, and CPU burst time for each process, there are random number generated following exponential distribution and uniform Distribution with the mean of 1 and 10 respectively.
+Analysis of the Non-Preemptive First Come First Serve method
+Expected Lower Bound of the Turnaround time : 
+TurnAroundTimeProcess i =WaitTime(Process i) + BurstTime(Process i)
+TurnAroundTimeProcess i  = WaitTime(Process j-1) + BurstTime(Process j-1)                                                               - interArivalTime(Processi) + BurstTime(Process j)
+…
+…
+TurnAroundTimeProcess i = j=0i, j>0CPUBurstTime(Process j)  - interArivalTime(process j) 
+E(TurnAroundTime(Process i)] = E[j=0i, j>0CPUBurstTime(Process j)  - interArivalTime(process j) ]
+All the above equation have written considering a assumption that is Wait Time for process 0 is 0 sec.
+The Expected value of the CPU burst time can be calculated separately as follows :
+E[BurstTime(Process i)] = 120020xdx = 10
+Same goes for the expected value of the inter arrival time of any process is equal                to lamda() which is equal to 1
+Putting the value of the expected Burst time in the previous equation of expected turnAround time :
+E[TurnAroundTimeProcess i] =j=0i, j>010 - 1 
+E[TurnAroundTimeProcess i] = j=0i , j>0 9
+Which will have a minimum value of a negative number, from which the we can say that the the data that we take into consideration is right as all the values of the inter arival time and the CPU burst time are positive which makes the turnaround time for all the process positive which is more than that expected lower bound of the value, a negative number. 
+
